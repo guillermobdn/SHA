@@ -20,7 +20,7 @@ public class CameraInfoActivity extends AppCompatActivity {
 
         //VideoProfile.CameraCapabilities
 
-        tvInfo.setText(Html.fromHtml("<p><b>Fabricante:</b>Sony</p><p><b>Megapixels</b>: 1000 Mpx</p>"));
+        tvInfo.setText(Html.fromHtml("<p><b>Fabricante:</b>Sony</p><p><b>Megapixels:</b> 1000 Mpx</p>"));
 
         test.setOnClickListener(new View.OnClickListener() {
             @Override

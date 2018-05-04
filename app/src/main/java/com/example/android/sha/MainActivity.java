@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //----------------------------------------
+
         Button camButton = findViewById(R.id.camera);
         camButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +27,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, CameraInfoActivity.class));
             }
         });
+
+        //----------------------------------------
+
+        Button screenButton = findViewById(R.id.screen);
+        screenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ScreenInfoActivity.class));
+            }
+        });
+
+        //----------------------------------------
+
     }
 
     @Override
@@ -47,5 +62,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }

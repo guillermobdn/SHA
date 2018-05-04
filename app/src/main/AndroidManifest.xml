@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CameraInfoActivity" />
+        <activity android:name=".CameraTestActivity" />
+        <activity android:name=".CameraResultActivity" />
+        <activity android:name=".ScreenInfoActivity" />
+        <activity android:name=".ScreenTestActivity" />
+        <activity android:name=".ScreenResultActivity"></activity>
     </application>
 
 </manifest>
