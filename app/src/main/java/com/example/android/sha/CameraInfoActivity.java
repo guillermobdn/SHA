@@ -16,7 +16,7 @@ public class CameraInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera_info);
 
         TextView tvInfo = findViewById(R.id.info);
-        Button test = findViewById(R.id.test);
+        Button test = findViewById(R.id.cameraTest);
 
         //VideoProfile.CameraCapabilities
 
