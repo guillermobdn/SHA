@@ -38,7 +38,7 @@
             android:text="Test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0f87dc"
+            android:background="@color/button_general"
             android:textColor="#ffffff"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
     </LinearLayout>

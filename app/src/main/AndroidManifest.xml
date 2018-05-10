@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -27,6 +28,10 @@
         <activity android:name=".CameraResultActivity" />
         <activity android:name=".ScreenInfoActivity" />
         <activity android:name=".ScreenTestActivity" />
-        <activity android:name=".ScreenResultActivity"></activity>
+        <activity android:name=".ScreenResultActivity" />
+        <activity android:name=".BatteryInfoActivity" />
+        <activity android:name=".BatteryTestActivity" />
+        <activity android:name=".BatteryResultActivity"></activity>
     </application>
+
 </manifest>

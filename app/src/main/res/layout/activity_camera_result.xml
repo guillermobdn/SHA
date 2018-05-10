@@ -14,7 +14,6 @@
         android:id="@+id/fondo">
 
         <ImageView
-            android:id="@+id/phone"
             android:layout_marginTop="50dp"
             android:layout_width="160dp"
             android:layout_height="180dp"
@@ -42,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#0f87dc"
+            android:background="@color/button_general"
             android:textColor="#ffffff"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
 
@@ -52,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="#0f87dc"
+            android:background="@color/button_general"
             android:textColor="#ffffff"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
     </LinearLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.sha.ScreenInfoActivity">
+    tools:context="com.example.android.sha.BatteryResultActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,21 +13,18 @@
         android:gravity="center_horizontal"
         android:id="@+id/fondo">
 
-        <TextView
-            android:layout_marginTop="@dimen/marginGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Screen"
-            android:textSize="@dimen/info_title"
-            android:drawableLeft="@drawable/screen"
-            android:layout_marginHorizontal="@dimen/marginGeneral"/>
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:src="@drawable/battery" />
 
         <TextView
-            android:id="@+id/text1"
-            android:layout_marginTop="@dimen/marginGeneral"
+            android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/marginGeneral"/>
+            android:textAlignment="center"
+            android:text="@string/batteryResult"/>
 
     </LinearLayout>
 
@@ -39,13 +36,25 @@
         android:layout_marginBottom="@dimen/bottom_layout">
 
         <Button
-            android:id="@+id/screenTest"
-            android:text="Test"
-            android:layout_width="match_parent"
+            android:id="@+id/butSi"
+            android:text="Sí"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_general"
+            android:textColor="#ffffff"
+            android:layout_marginHorizontal="@dimen/marginGeneral"/>
+
+        <Button
+            android:id="@+id/butNo"
+            android:text="No"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:background="@color/button_general"
             android:textColor="#ffffff"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

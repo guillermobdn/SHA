@@ -1,6 +1,7 @@
 package com.example.android.sha;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,7 +10,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class MainActivity extends AppCompatActivity {
+
+    Button camButton;
+    Button screenButton;
+    Button batteryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         //----------------------------------------
 
-        Button camButton = findViewById(R.id.camera);
+        camButton = findViewById(R.id.camera);
         camButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         //----------------------------------------
 
-        Button screenButton = findViewById(R.id.screen);
+        screenButton = findViewById(R.id.screen);
         screenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,7 +49,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //----------------------------------------
+        batteryButton = findViewById(R.id.battery);
+        batteryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, BatteryInfoActivity.class));
+            }
+        });
 
+        loadResults();
     }
 
     @Override
@@ -69,4 +87,35 @@ public class MainActivity extends AppCompatActivity {
         super.onBackPressed();
         finishAffinity();
     }
+
+    void loadResults(){
+        String iid = SHAUtils.getAndroidId(this);
+
+        FirebaseDatabase.getInstance().getReference().child(iid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                SHAResult shaResult = dataSnapshot.getValue(SHAResult.class);
+
+                setButtonColor(batteryButton, shaResult.battery);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    void setButtonColor(Button button, Boolean ok){
+        if(ok == null){
+            return;
+        }
+
+        if(ok){
+            button.setBackgroundColor(Color.GREEN);
+        }else{
+            button.setBackgroundColor(Color.RED);
+        }
+    }
+
 }

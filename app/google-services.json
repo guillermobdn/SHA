@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "763300529779",
+    "firebase_url": "https://sensor-hardware-app.firebaseio.com",
+    "project_id": "sensor-hardware-app",
+    "storage_bucket": "sensor-hardware-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763300529779:android:ac62067b975fce3a",
+        "android_client_info": {
+          "package_name": "com.example.android.sha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763300529779-v9ugirhc8tprt0m9rjgs5icd7h3dl09b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.sha",
+            "certificate_hash": "38eb90d2878c786d42440b0d1a4fb8ce6fd3d20f"
+          }
+        },
+        {
+          "client_id": "763300529779-0uo5mpjtmjose1jjingj6gv33cbullma.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.sha",
+            "certificate_hash": "dd5b73bb07f5a785eca54d6573cd74305da551f5"
+          }
+        },
+        {
+          "client_id": "763300529779-m0fbrdfu65hm26o2f9bt1vob1h0i2lkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMilSWZRTgdXmbS2owsKGWqwha4_KYT0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763300529779-m0fbrdfu65hm26o2f9bt1vob1h0i2lkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763300529779:android:380c033f7ec0f310",
+        "android_client_info": {
+          "package_name": "com.example.dam2a.sha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763300529779-7ivhsk8slt1j3hca4n2t3fjvqvg7npvu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dam2a.sha",
+            "certificate_hash": "dd5b73bb07f5a785eca54d6573cd74305da551f5"
+          }
+        },
+        {
+          "client_id": "763300529779-b2380e6p7chodlslsb8cf9ensuieffei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dam2a.sha",
+            "certificate_hash": "38eb90d2878c786d42440b0d1a4fb8ce6fd3d20f"
+          }
+        },
+        {
+          "client_id": "763300529779-m0fbrdfu65hm26o2f9bt1vob1h0i2lkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkMilSWZRTgdXmbS2owsKGWqwha4_KYT0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763300529779-m0fbrdfu65hm26o2f9bt1vob1h0i2lkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

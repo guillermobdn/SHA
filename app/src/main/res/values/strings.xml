@@ -4,4 +4,6 @@
     <string name="screenTest">La pantalla se pondrá primero en negro y luego en blanco. Mire a ver si hay píxeles de distinto color y puntee la pantalla para continuar.</string>
     <string name="screenResult">¿Tenían las pantallas un color sólido?</string>
     <string name="cameraResult">¿Pudo ver su foto?</string>
+    <string name="batteryTest">Pulse el botón cada vez que quiera comprobar que el smartphone cargue.</string>
+    <string name="batteryResult">¿El smartphone pudo detectar el cargador?</string>
 </resources>
