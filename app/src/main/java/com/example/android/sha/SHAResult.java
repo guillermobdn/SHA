@@ -7,4 +7,7 @@ package com.example.android.sha;
 public class SHAResult {
     boolean battery;
     boolean camera;
+    boolean screen;
+    boolean vibrate;
+    boolean flashlight;
 }

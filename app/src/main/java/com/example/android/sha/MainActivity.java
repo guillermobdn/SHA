@@ -1,6 +1,7 @@
 package com.example.android.sha;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,9 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button camButton;
-    Button screenButton;
-    Button batteryButton;
+    Button camButton, screenButton, batteryButton, vibrateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, BatteryInfoActivity.class));
+            }
+        });
+
+        //----------------------------------------
+        vibrateButton = findViewById(R.id.vibration);
+        vibrateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, VibratorInfoActivity.class));
             }
         });
 
@@ -97,6 +105,9 @@ public class MainActivity extends AppCompatActivity {
                 SHAResult shaResult = dataSnapshot.getValue(SHAResult.class);
 
                 setButtonColor(batteryButton, shaResult.battery);
+                setButtonColor(camButton, shaResult.camera);
+                setButtonColor(screenButton, shaResult.screen);
+                setButtonColor(vibrateButton, shaResult.vibrate);
             }
 
             @Override
@@ -112,9 +123,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(ok){
-            button.setBackgroundColor(Color.GREEN);
+            button.setBackgroundTintList(ColorStateList.valueOf(Color.GREEN));
         }else{
-            button.setBackgroundColor(Color.RED);
+            button.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
         }
     }
 

@@ -18,8 +18,8 @@ public class BatteryResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battery_result);
 
-        butSi = findViewById(R.id.butSi);
-        butNo = findViewById(R.id.butNo);
+        butSi = (Button) findViewById(R.id.butSi);
+        butNo = (Button) findViewById(R.id.butNo);
 
         butSi.setOnClickListener(new View.OnClickListener() {
             @Override

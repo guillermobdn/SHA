@@ -6,4 +6,6 @@
     <string name="cameraResult">¿Pudo ver su foto?</string>
     <string name="batteryTest">Pulse el botón cada vez que quiera comprobar que el smartphone cargue.</string>
     <string name="batteryResult">¿El smartphone pudo detectar el cargador?</string>
+    <string name="vibratorTest">Pulse el botón para comprobar que la vibración del smartphone funciona correctamente.</string>
+    <string name="vibratorResult">¿Pudo detectar la vibración del smartphone?</string>
 </resources>

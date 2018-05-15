@@ -7,6 +7,8 @@
 
     <uses-feature android:name="android.hardware.camera" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,7 +33,10 @@
         <activity android:name=".ScreenResultActivity" />
         <activity android:name=".BatteryInfoActivity" />
         <activity android:name=".BatteryTestActivity" />
-        <activity android:name=".BatteryResultActivity"></activity>
+        <activity android:name=".BatteryResultActivity" />
+        <activity android:name=".VibratorInfoActivity" />
+        <activity android:name=".VibratorTestActivity" />
+        <activity android:name=".VibratorResultActivity"></activity>
     </application>
 
 </manifest>

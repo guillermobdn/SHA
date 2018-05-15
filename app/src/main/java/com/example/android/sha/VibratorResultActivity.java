@@ -8,14 +8,14 @@ import android.widget.Button;
 
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ScreenResultActivity extends AppCompatActivity {
+public class VibratorResultActivity extends AppCompatActivity {
 
     Button butSi, butNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_screen_result);
+        setContentView(R.layout.activity_vibrator_result);
 
         butSi = (Button) findViewById(R.id.butSi);
         butNo = (Button) findViewById(R.id.butNo);
@@ -38,9 +38,11 @@ public class ScreenResultActivity extends AppCompatActivity {
     void saveResults(boolean ok){
         String iid = SHAUtils.getAndroidId(this);
 
-        FirebaseDatabase.getInstance().getReference().child(iid).child("screen").setValue(ok);
+        FirebaseDatabase.getInstance().getReference().child(iid).child("vibrate").setValue(ok);
 
-        Intent main = new Intent(ScreenResultActivity.this, MainActivity.class);
+        Intent main = new Intent(VibratorResultActivity.this, MainActivity.class);
         startActivity(main);
     }
+
+
 }
