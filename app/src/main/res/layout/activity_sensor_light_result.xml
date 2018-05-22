@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.sha.Screen.ScreenTestActivity">
+    tools:context="com.example.android.sha.SensorLight.SensorLightResultActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,20 +15,17 @@
         android:id="@+id/fondo">
 
         <ImageView
-            android:id="@+id/phone"
             android:layout_marginTop="50dp"
             android:layout_width="160dp"
             android:layout_height="180dp"
-            android:src="@drawable/phone" />
+            android:src="@drawable/sensorlight" />
 
         <TextView
-            android:id="@+id/text1"
             android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="@string/screenTest"
-            android:layout_marginHorizontal="@dimen/marginGeneral"/>
+            android:text="@string/sensorResult"/>
 
     </LinearLayout>
 
@@ -39,9 +37,20 @@
         android:layout_marginBottom="@dimen/bottom_layout">
 
         <Button
-            android:id="@+id/continuar"
-            android:text="Continuar"
-            android:layout_width="match_parent"
+            android:id="@+id/butSi"
+            android:text="Sí"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_general"
+            android:textColor="#ffffff"
+            android:layout_marginHorizontal="@dimen/marginGeneral"/>
+
+        <Button
+            android:id="@+id/butNo"
+            android:text="No"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:background="@color/button_general"
             android:textColor="#ffffff"

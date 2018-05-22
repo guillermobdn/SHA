@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.sha.Battery.BatteryInfoActivity">
+    tools:context="com.example.android.sha.FlashLight.FlashlightInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,9 +14,9 @@
             android:layout_marginTop="@dimen/marginGeneral"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Battery"
+            android:text="Flashlight"
             android:textSize="@dimen/info_title"
-            android:drawableLeft="@drawable/battery"
+            android:drawableLeft="@drawable/flash"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
     </LinearLayout>
 
@@ -28,7 +28,7 @@
         android:layout_marginBottom="@dimen/bottom_layout">
 
         <Button
-            android:id="@+id/batteryTest"
+            android:id="@+id/flashlightTest"
             android:text="Test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

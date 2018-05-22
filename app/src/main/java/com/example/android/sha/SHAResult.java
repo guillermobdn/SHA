@@ -10,4 +10,5 @@ public class SHAResult {
     boolean screen;
     boolean vibrate;
     boolean flashlight;
+    boolean sensorlight;
 }

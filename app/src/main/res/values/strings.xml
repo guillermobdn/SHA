@@ -8,4 +8,8 @@
     <string name="batteryResult">¿El smartphone pudo detectar el cargador?</string>
     <string name="vibratorTest">Pulse el botón para comprobar que la vibración del smartphone funciona correctamente.</string>
     <string name="vibratorResult">¿Pudo detectar la vibración del smartphone?</string>
+    <string name="flash">Pulse la imagen superior para encender o apagar el flash de la camera.</string>
+    <string name="sensorlightTest">Compruebe la cantidad de luz que recibe el sensor de su smartphone tapando su respectivo sensor.</string>
+    <string name="sensorResult">¿Funciona correctamente el sensor?</string>
+    <string name="flashlightResult">¿Pudo ver el flash?</string>
 </resources>

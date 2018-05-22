@@ -11,6 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.android.sha.Battery.BatteryInfoActivity;
+import com.example.android.sha.Camera.CameraInfoActivity;
+import com.example.android.sha.FlashLight.FlashlightInfoActivity;
+import com.example.android.sha.Screen.ScreenInfoActivity;
+import com.example.android.sha.SensorLight.SensorLightInfoActivity;
+import com.example.android.sha.Vibrate.VibratorInfoActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button camButton, screenButton, batteryButton, vibrateButton;
+    Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +71,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //----------------------------------------
+        sensorlightButton = findViewById(R.id.lightsensor);
+        sensorlightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SensorLightInfoActivity.class));
+            }
+        });
+
+        //----------------------------------------
+        flashlightButton = findViewById(R.id.flashlight);
+        flashlightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FlashlightInfoActivity.class));
+            }
+        });
+
+
         loadResults();
     }
 
@@ -108,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
                 setButtonColor(camButton, shaResult.camera);
                 setButtonColor(screenButton, shaResult.screen);
                 setButtonColor(vibrateButton, shaResult.vibrate);
+                setButtonColor(sensorlightButton, shaResult.sensorlight);
+                setButtonColor(flashlightButton, shaResult.flashlight);
             }
 
             @Override

@@ -1,4 +1,4 @@
-package com.example.android.sha;
+package com.example.android.sha.Battery;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.android.sha.R;
 
 public class BatteryTestActivity extends AppCompatActivity {
     private TextView textBattery,textCharge;

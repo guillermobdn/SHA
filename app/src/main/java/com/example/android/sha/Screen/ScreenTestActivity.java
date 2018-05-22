@@ -1,4 +1,4 @@
-package com.example.android.sha;
+package com.example.android.sha.Screen;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.android.sha.R;
 
 public class ScreenTestActivity extends AppCompatActivity {
 

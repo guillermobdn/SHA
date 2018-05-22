@@ -4,20 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.sha.Battery.BatteryInfoActivity">
+    tools:context="com.example.android.sha.FlashLight.FlashlightTestActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/imageFlashlight"
+            android:layout_marginTop="50dp"
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:src="@drawable/flash_off" />
+
         <TextView
-            android:layout_marginTop="@dimen/marginGeneral"
+            android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Battery"
-            android:textSize="@dimen/info_title"
-            android:drawableLeft="@drawable/battery"
+            android:textAlignment="center"
+            android:text="@string/flash"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -28,8 +37,8 @@
         android:layout_marginBottom="@dimen/bottom_layout">
 
         <Button
-            android:id="@+id/batteryTest"
-            android:text="Test"
+            android:id="@+id/testEnd"
+            android:text="Finalizar test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/button_general"

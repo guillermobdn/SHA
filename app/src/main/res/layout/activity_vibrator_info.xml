@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.sha.VibratorInfoActivity">
+    tools:context="com.example.android.sha.Vibrate.VibratorInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:layout_marginTop="@dimen/marginGeneral"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vibrator"
+            android:text="Vibration"
             android:textSize="@dimen/info_title"
             android:drawableLeft="@drawable/vibrate"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
