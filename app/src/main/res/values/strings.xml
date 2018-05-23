@@ -13,4 +13,6 @@
     <string name="sensorResult">¿El sensor funciona correctamente?</string>
     <string name="flashlightResult">¿Pudo ver el flash?</string>
     <string name="gyroscopeTest">Pulse el botón y mueva el smartphone para comprobar que el sensor funciona correctamente.</string>
+    <string name="audioTest">Pulse la imagen de arriba para iniciar o pausar el audio.</string>
+    <string name="audioResult">¿Pudo escuchar el audio?</string>
 </resources>

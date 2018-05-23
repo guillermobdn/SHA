@@ -52,7 +52,10 @@
         <activity android:name=".FlashLight.FlashLightResultActivity" />
         <activity android:name=".Gyroscope.GyroscopeTestActivity" />
         <activity android:name=".Gyroscope.GyroscopeInfoActivity" />
-        <activity android:name=".Gyroscope.GyroscopeResultActivity"></activity>
+        <activity android:name=".Gyroscope.GyroscopeResultActivity" />
+        <activity android:name=".Audio.AudioTestActivity" />
+        <activity android:name=".Audio.AudioInfoActivity" />
+        <activity android:name=".Audio.AudioResultActivity"></activity>
     </application>
 
 </manifest>

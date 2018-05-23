@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.android.sha.Audio.AudioInfoActivity;
 import com.example.android.sha.Battery.BatteryInfoActivity;
 import com.example.android.sha.Camera.CameraInfoActivity;
 import com.example.android.sha.FlashLight.FlashlightInfoActivity;
@@ -25,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton, gyroscopeButton;
+    Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton, gyroscopeButton, audioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //----------------------------------------
+        audioButton = (Button) findViewById(R.id.audio);
+        audioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AudioInfoActivity.class));
+            }
+        });
+
 
         loadResults();
     }
@@ -146,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 setButtonColor(sensorlightButton, shaResult.sensorlight);
                 setButtonColor(flashlightButton, shaResult.flashlight);
                 setButtonColor(gyroscopeButton, shaResult.gyroscope);
+                setButtonColor(audioButton, shaResult.audio);
             }
 
             @Override
