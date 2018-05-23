@@ -37,9 +37,6 @@ public class SensorLightTestActivity extends AppCompatActivity implements Sensor
         mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         testEnd = (Button)findViewById(R.id.testEnd) ;
 
-        System.out.println("LIGHT " + mLight);
-
-
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

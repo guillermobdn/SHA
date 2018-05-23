@@ -10,6 +10,7 @@
     <string name="vibratorResult">¿Pudo detectar la vibración del smartphone?</string>
     <string name="flash">Pulse la imagen superior para encender o apagar el flash de la camera.</string>
     <string name="sensorlightTest">Compruebe la cantidad de luz que recibe el sensor de su smartphone tapando su respectivo sensor.</string>
-    <string name="sensorResult">¿Funciona correctamente el sensor?</string>
+    <string name="sensorResult">¿El sensor funciona correctamente?</string>
     <string name="flashlightResult">¿Pudo ver el flash?</string>
+    <string name="gyroscopeTest">Pulse el botón y mueva el smartphone para comprobar que el sensor funciona correctamente.</string>
 </resources>

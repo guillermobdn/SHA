@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.sha.SensorLight.SensorLightInfoActivity">
+    tools:context="com.example.android.sha.Gyroscope.GyroscopeInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,17 +14,10 @@
             android:layout_marginTop="@dimen/marginGeneral"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SensorLight"
+            android:text="Gyroscope"
             android:textSize="@dimen/info_title"
-            android:drawableLeft="@drawable/sensorlight"
+            android:drawableLeft="@drawable/gyroscope"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
-
-        <TextView
-            android:id="@+id/info"
-            android:layout_marginTop="@dimen/marginGeneral"
-            android:layout_marginHorizontal="@dimen/marginGeneral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
@@ -35,7 +28,7 @@
         android:layout_marginBottom="@dimen/bottom_layout">
 
         <Button
-            android:id="@+id/sensorLightTest"
+            android:id="@+id/gyroscopeTest"
             android:text="Test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

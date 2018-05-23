@@ -14,6 +14,7 @@ import android.widget.Button;
 import com.example.android.sha.Battery.BatteryInfoActivity;
 import com.example.android.sha.Camera.CameraInfoActivity;
 import com.example.android.sha.FlashLight.FlashlightInfoActivity;
+import com.example.android.sha.Gyroscope.GyroscopeInfoActivity;
 import com.example.android.sha.Screen.ScreenInfoActivity;
 import com.example.android.sha.SensorLight.SensorLightInfoActivity;
 import com.example.android.sha.Vibrate.VibratorInfoActivity;
@@ -24,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton;
+    Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton, gyroscopeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         //----------------------------------------
 
-        camButton = findViewById(R.id.camera);
+        camButton = (Button) findViewById(R.id.camera);
         camButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         //----------------------------------------
 
-        screenButton = findViewById(R.id.screen);
+        screenButton = (Button) findViewById(R.id.screen);
         screenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //----------------------------------------
-        batteryButton = findViewById(R.id.battery);
+        batteryButton = (Button) findViewById(R.id.battery);
         batteryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //----------------------------------------
-        vibrateButton = findViewById(R.id.vibration);
+        vibrateButton = (Button) findViewById(R.id.vibration);
         vibrateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //----------------------------------------
-        sensorlightButton = findViewById(R.id.lightsensor);
+        sensorlightButton = (Button) findViewById(R.id.lightsensor);
         sensorlightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,11 +82,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //----------------------------------------
-        flashlightButton = findViewById(R.id.flashlight);
+        flashlightButton = (Button) findViewById(R.id.flashlight);
         flashlightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, FlashlightInfoActivity.class));
+            }
+        });
+
+        //----------------------------------------
+        gyroscopeButton = (Button) findViewById(R.id.gyroscope);
+        gyroscopeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GyroscopeInfoActivity.class));
             }
         });
 
@@ -135,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 setButtonColor(vibrateButton, shaResult.vibrate);
                 setButtonColor(sensorlightButton, shaResult.sensorlight);
                 setButtonColor(flashlightButton, shaResult.flashlight);
+                setButtonColor(gyroscopeButton, shaResult.gyroscope);
             }
 
             @Override

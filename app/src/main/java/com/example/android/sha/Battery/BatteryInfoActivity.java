@@ -15,7 +15,7 @@ public class BatteryInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battery_info);
 
-        Button test = findViewById(R.id.batteryTest);
+        Button test = (Button) findViewById(R.id.batteryTest);
 
         test.setOnClickListener(new View.OnClickListener() {
             @Override

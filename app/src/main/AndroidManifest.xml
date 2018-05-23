@@ -9,6 +9,13 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.proximity"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -42,7 +49,10 @@
         <activity android:name=".SensorLight.SensorLightTestActivity" />
         <activity android:name=".SensorLight.SensorLightInfoActivity" />
         <activity android:name=".SensorLight.SensorLightResultActivity" />
-        <activity android:name=".FlashLight.FlashLightResultActivity"></activity>
+        <activity android:name=".FlashLight.FlashLightResultActivity" />
+        <activity android:name=".Gyroscope.GyroscopeTestActivity" />
+        <activity android:name=".Gyroscope.GyroscopeInfoActivity" />
+        <activity android:name=".Gyroscope.GyroscopeResultActivity"></activity>
     </application>
 
 </manifest>
