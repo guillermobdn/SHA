@@ -16,6 +16,8 @@ import com.example.android.sha.Battery.BatteryInfoActivity;
 import com.example.android.sha.Camera.CameraInfoActivity;
 import com.example.android.sha.FlashLight.FlashlightInfoActivity;
 import com.example.android.sha.Gyroscope.GyroscopeInfoActivity;
+import com.example.android.sha.Microphone.MicrophoneInfoActivity;
+import com.example.android.sha.Proximity.ProximityInfoActivity;
 import com.example.android.sha.Screen.ScreenInfoActivity;
 import com.example.android.sha.SensorLight.SensorLightInfoActivity;
 import com.example.android.sha.Vibrate.VibratorInfoActivity;
@@ -26,7 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton, gyroscopeButton, audioButton;
+    Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton, gyroscopeButton, audioButton, microButton
+            , proximityButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +112,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //----------------------------------------
+        microButton = (Button) findViewById(R.id.mic);
+        microButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MicrophoneInfoActivity.class));
+            }
+        });
+
+        //----------------------------------------
+        proximityButton = (Button) findViewById(R.id.proximity);
+        proximityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ProximityInfoActivity.class));
+            }
+        });
+
 
         loadResults();
     }
@@ -157,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
                 setButtonColor(flashlightButton, shaResult.flashlight);
                 setButtonColor(gyroscopeButton, shaResult.gyroscope);
                 setButtonColor(audioButton, shaResult.audio);
+                setButtonColor(microButton, shaResult.microphone);
+                setButtonColor(proximityButton, shaResult.proximity);
             }
 
             @Override

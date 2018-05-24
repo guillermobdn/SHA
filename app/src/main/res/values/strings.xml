@@ -15,4 +15,7 @@
     <string name="gyroscopeTest">Pulse el botón y mueva el smartphone para comprobar que el sensor funciona correctamente.</string>
     <string name="audioTest">Pulse la imagen de arriba para iniciar o pausar el audio.</string>
     <string name="audioResult">¿Pudo escuchar el audio?</string>
+    <string name="microTest">Pulse el botón de "Record" para grabar un audio, cuando tenga el audio grabado pulse "Play" para reproducirlo.</string>
+    <string name="microResult">¿Pudo escuchar el audio que grabó?</string>
+    <string name="proximityTest">Compruebe que el sensor de proximidad funciona correctamente tapando su respectivo sensor.</string>
 </resources>

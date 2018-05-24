@@ -13,4 +13,6 @@ public class SHAResult {
     boolean sensorlight;
     boolean gyroscope;
     boolean audio;
+    boolean microphone;
+    boolean proximity;
 }
