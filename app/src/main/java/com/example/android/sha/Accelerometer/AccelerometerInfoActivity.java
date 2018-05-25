@@ -20,7 +20,7 @@ public class AccelerometerInfoActivity extends AppCompatActivity {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AccelerometerInfoActivity.this, AccelerometerResultActivity.class));
+                startActivity(new Intent(AccelerometerInfoActivity.this, AccelerometerTestActivity.class));
             }
         });
     }

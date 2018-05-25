@@ -194,7 +194,12 @@ public class MicrophoneTestActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        mediaPlayer.pause();
+        if(mediaPlayer == null){
+
+        }else {
+            mediaPlayer.pause();
+
+        }
     }
 
 }

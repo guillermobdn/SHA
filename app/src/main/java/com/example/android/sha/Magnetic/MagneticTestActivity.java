@@ -52,8 +52,8 @@ public class MagneticTestActivity extends AppCompatActivity implements SensorEve
         float pz = Math.round(sensorEvent.values[2]);
 
         x.setText("X: " + String.valueOf(px));
-        y.setText(", Y: " + String.valueOf(py));
-        z.setText(", Z: " + String.valueOf(pz));
+        y.setText("Y: " + String.valueOf(py));
+        z.setText("Z: " + String.valueOf(pz));
 
         double tesla = Math.round(Math.sqrt((px * px)+(py * py) + (pz * pz)));
         teslatxt.setText(String.format(tesla + " µT"));

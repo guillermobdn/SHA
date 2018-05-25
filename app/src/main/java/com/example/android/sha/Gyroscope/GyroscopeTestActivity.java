@@ -80,7 +80,7 @@ public class GyroscopeTestActivity extends AppCompatActivity implements SensorEv
                             int py = Math.round(orientations[1]);
                             int pz = Math.round(orientations[2]);
 
-                            textGyroscope.setText("X: " + px + " Y: " + py + " Z: " + pz);
+                            textGyroscope.setText("X: " + px + ", Y: " + py + ", Z: " + pz);
 
                         }
                         @Override
