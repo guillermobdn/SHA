@@ -41,7 +41,11 @@ public class MicrophoneTestActivity extends AppCompatActivity {
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(mediaPlayer == null){
 
+                }else {
+                    mediaPlayer.pause();
+                }
                 startActivity(new Intent(MicrophoneTestActivity.this, MicrophoneResultActivity.class));
             }
         });
@@ -186,4 +190,11 @@ public class MicrophoneTestActivity extends AppCompatActivity {
         return result == PackageManager.PERMISSION_GRANTED &&
                 result1 == PackageManager.PERMISSION_GRANTED;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mediaPlayer.pause();
+    }
+
 }

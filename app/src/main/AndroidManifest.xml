@@ -65,7 +65,13 @@
         <activity android:name=".Microphone.MicrophoneResultActivity" />
         <activity android:name=".Proximity.ProximityInfoActivity" />
         <activity android:name=".Proximity.ProximityTestActivity" />
-        <activity android:name=".Proximity.ProximityResultActivity"></activity>
+        <activity android:name=".Proximity.ProximityResultActivity" />
+        <activity android:name=".Magnetic.MagneticInfoActivity" />
+        <activity android:name=".Magnetic.MagneticTestActivity" />
+        <activity android:name=".Magnetic.MagneticResultActivity" />
+        <activity android:name=".Accelerometer.AccelerometerInfoActivity" />
+        <activity android:name=".Accelerometer.AccelerometerTestActivity" />
+        <activity android:name=".Accelerometer.AccelerometerResultActivity"></activity>
     </application>
 
 </manifest>

@@ -32,8 +32,8 @@ public class ScreenTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 phone.setVisibility(View.INVISIBLE);
-                text1.setVisibility(View.INVISIBLE  );
-                continuar.setVisibility(View.INVISIBLE  );
+                text1.setVisibility(View.INVISIBLE);
+                continuar.setVisibility(View.INVISIBLE);
 
                 fondo.setBackgroundColor(Color.BLACK);
 

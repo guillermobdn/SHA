@@ -11,11 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.android.sha.Accelerometer.AccelerometerInfoActivity;
 import com.example.android.sha.Audio.AudioInfoActivity;
 import com.example.android.sha.Battery.BatteryInfoActivity;
 import com.example.android.sha.Camera.CameraInfoActivity;
 import com.example.android.sha.FlashLight.FlashlightInfoActivity;
 import com.example.android.sha.Gyroscope.GyroscopeInfoActivity;
+import com.example.android.sha.Magnetic.MagneticInfoActivity;
 import com.example.android.sha.Microphone.MicrophoneInfoActivity;
 import com.example.android.sha.Proximity.ProximityInfoActivity;
 import com.example.android.sha.Screen.ScreenInfoActivity;
@@ -29,7 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton, gyroscopeButton, audioButton, microButton
-            , proximityButton;
+            , proximityButton, magneticButton, accelerometerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +132,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //----------------------------------------
+        magneticButton = (Button) findViewById(R.id.magnetic);
+        magneticButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MagneticInfoActivity.class));
+            }
+        });
+
+        //----------------------------------------
+        accelerometerButton = (Button) findViewById(R.id.accelerometer);
+        accelerometerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AccelerometerInfoActivity.class));
+            }
+        });
+
 
         loadResults();
     }
@@ -180,6 +200,8 @@ public class MainActivity extends AppCompatActivity {
                 setButtonColor(audioButton, shaResult.audio);
                 setButtonColor(microButton, shaResult.microphone);
                 setButtonColor(proximityButton, shaResult.proximity);
+                setButtonColor(magneticButton, shaResult.magnetic);
+                setButtonColor(accelerometerButton, shaResult.accelerometer);
             }
 
             @Override

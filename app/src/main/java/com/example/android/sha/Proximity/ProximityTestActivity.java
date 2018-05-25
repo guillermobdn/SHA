@@ -63,10 +63,10 @@ public class ProximityTestActivity extends AppCompatActivity implements SensorEv
     public void onSensorChanged(SensorEvent evento) {
 
         if (evento.values[0] < s.getMaximumRange()) {
-            fondo.setBackgroundColor(Color.MAGENTA);
+            fondo.setImageResource(R.drawable.eye_close);
             prox.setText("0.0 CM");
         }else {
-            fondo.setBackgroundColor(Color.CYAN);
+            fondo.setImageResource(R.drawable.eye_open);
             prox.setText(s.getMaximumRange() + " CM");
         }
     }

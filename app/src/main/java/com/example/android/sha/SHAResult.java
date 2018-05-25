@@ -15,4 +15,7 @@ public class SHAResult {
     boolean audio;
     boolean microphone;
     boolean proximity;
+    boolean magnetic;
+    boolean accelerometer;
+    boolean runAllTest;
 }

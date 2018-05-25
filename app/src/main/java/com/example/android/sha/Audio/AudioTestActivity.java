@@ -44,8 +44,18 @@ public class AudioTestActivity extends AppCompatActivity {
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.pause();
+                play_pause.setBackgroundResource(R.drawable.play);
                 startActivity(new Intent(AudioTestActivity.this, AudioResultActivity.class));
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        play_pause.setBackgroundResource(R.drawable.play);
+        mp.pause();
+    }
+
 }
