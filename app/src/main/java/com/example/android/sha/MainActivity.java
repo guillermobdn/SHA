@@ -31,7 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     Button camButton, screenButton, batteryButton, vibrateButton, sensorlightButton, flashlightButton, gyroscopeButton, audioButton, microButton
-            , proximityButton, magneticButton, accelerometerButton;
+            , proximityButton, magneticButton, accelerometerButton,alltestButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +150,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //----------------------------------------
+        alltestButton = (Button) findViewById(R.id.run_all);
+        alltestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AllTestActivity.class));
+            }
+        });
+
 
         loadResults();
     }
@@ -170,7 +179,6 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(MainActivity.this, ResultsActivity.class));
             return true;
         }
 

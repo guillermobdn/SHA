@@ -5,6 +5,8 @@ package com.example.android.sha;
  */
 
 public class SHAResult {
+    String deviceName ;//= android.os.Build.MODEL;
+    String deviceMan ;//= android.os.Build.MANUFACTURER;
     Boolean battery;
     Boolean camera;
     Boolean screen;

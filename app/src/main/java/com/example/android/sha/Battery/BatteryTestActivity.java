@@ -38,11 +38,12 @@ public class BatteryTestActivity extends AppCompatActivity {
                 checkBatteryState(textCharge);
             }
         });
-
+        final Intent resultactivity = new Intent(BatteryTestActivity.this, BatteryResultActivity.class);
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BatteryTestActivity.this, BatteryResultActivity.class));
+                startActivity(resultactivity);
+                resultactivity.putExtra("alltest",true);
             }
         });
 

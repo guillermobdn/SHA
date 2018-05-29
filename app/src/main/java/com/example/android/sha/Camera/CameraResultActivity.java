@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.android.sha.Battery.BatteryTestActivity;
 import com.example.android.sha.MainActivity;
 import com.example.android.sha.R;
 import com.example.android.sha.SHAUtils;
@@ -14,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CameraResultActivity extends AppCompatActivity {
 
     Button butSi, butNo;
-
+    Boolean alltest = getIntent().getBooleanExtra("alltest",true);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,13 @@ public class CameraResultActivity extends AppCompatActivity {
 
         FirebaseDatabase.getInstance().getReference().child(iid).child("camera").setValue(ok);
 
-        Intent main = new Intent(CameraResultActivity.this, MainActivity.class);
-        startActivity(main);
+
+        if (!alltest) {
+            Intent main = new Intent(CameraResultActivity.this, MainActivity.class);
+            startActivity(main);
+        }else {
+            Intent main = new Intent(CameraResultActivity.this, BatteryTestActivity.class);
+            startActivity(main);
+        }
     }
 }

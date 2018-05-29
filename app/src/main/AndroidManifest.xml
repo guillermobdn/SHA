@@ -71,7 +71,8 @@
         <activity android:name=".Magnetic.MagneticResultActivity" />
         <activity android:name=".Accelerometer.AccelerometerInfoActivity" />
         <activity android:name=".Accelerometer.AccelerometerTestActivity" />
-        <activity android:name=".Accelerometer.AccelerometerResultActivity"></activity>
+        <activity android:name=".Accelerometer.AccelerometerResultActivity" />
+        <activity android:name=".AllTestActivity"></activity>
     </application>
 
 </manifest>

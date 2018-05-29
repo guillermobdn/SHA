@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.android.sha.FlashLight.FlashlightTestActivity;
 import com.example.android.sha.MainActivity;
 import com.example.android.sha.R;
 import com.example.android.sha.SHAUtils;
@@ -14,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class BatteryResultActivity extends AppCompatActivity {
 
     Button butSi, butNo;
+    Boolean alltest = getIntent().getBooleanExtra("alltest",true);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,12 @@ public class BatteryResultActivity extends AppCompatActivity {
 
         FirebaseDatabase.getInstance().getReference().child(iid).child("battery").setValue(ok);
 
-        Intent main = new Intent(BatteryResultActivity.this, MainActivity.class);
-        startActivity(main);
+        if (!alltest){
+            Intent main = new Intent(BatteryResultActivity.this, MainActivity.class);
+            startActivity(main);
+        }else {
+            Intent main = new Intent(BatteryResultActivity.this, FlashlightTestActivity.class);
+            startActivity(main);
+        }
     }
 }

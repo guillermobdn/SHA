@@ -35,11 +35,13 @@ public class CameraTestActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,0);
+        final Intent resultactivity = new Intent(CameraTestActivity.this, CameraResultActivity.class);
 
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CameraTestActivity.this, CameraResultActivity.class));
+                startActivity(resultactivity);
+                resultactivity.putExtra("alltest",true);
             }
         });
 

@@ -20,4 +20,5 @@
     <string name="proximityTest">Compruebe que el sensor de proximidad funciona correctamente tapando su respectivo sensor.</string>
     <string name="magneticTest">Compruebe que el sensor funciona correctamente acercando el smartphone a un objeto para medir y cuantificar su cantidad de fuerza magnética.</string>
     <string name="acceTest">Pulse el botón y acontinuación mueva el smartphone para comprobar que el sensor funciona correctamente.</string>
+    <string name="runAllTest">A continuación se ejecutarán todos los sensores uno a uno para comprobar que el smartphone funciona correctamente. Usted tendrá que corroborar que todo funciona respondiendo a la pregunta que se le muestra después de cada prueba.</string>
 </resources>

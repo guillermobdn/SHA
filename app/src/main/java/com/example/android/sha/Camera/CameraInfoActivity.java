@@ -41,7 +41,7 @@ public class CameraInfoActivity extends AppCompatActivity {
         Log.i("TAG","Version Code: " + Build.VERSION.RELEASE);
 
         System.out.println();
-        tvInfo.setText(Html.fromHtml("<p><b>Fabricante:</b> "+ " "+ "</p><p><b>Megapixeles:</b> " + getBackCameraResolutionInMp()+"</p>"));
+        tvInfo.setText(Html.fromHtml("<p><b>Megapixeles:</b> " + getBackCameraResolutionInMp()+"</p>"));
 
         test.setOnClickListener(new View.OnClickListener() {
             @Override
