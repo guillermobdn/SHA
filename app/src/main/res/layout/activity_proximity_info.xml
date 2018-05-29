@@ -18,6 +18,14 @@
             android:textSize="@dimen/info_title"
             android:drawableLeft="@drawable/proximity"
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_marginTop="@dimen/marginInfo"
+            android:layout_marginHorizontal="@dimen/marginInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
     <LinearLayout

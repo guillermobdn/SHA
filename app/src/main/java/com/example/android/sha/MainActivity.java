@@ -190,18 +190,33 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 SHAResult shaResult = dataSnapshot.getValue(SHAResult.class);
 
-                setButtonColor(batteryButton, shaResult.battery);
-                setButtonColor(camButton, shaResult.camera);
-                setButtonColor(screenButton, shaResult.screen);
-                setButtonColor(vibrateButton, shaResult.vibrate);
-                setButtonColor(sensorlightButton, shaResult.sensorlight);
-                setButtonColor(flashlightButton, shaResult.flashlight);
-                setButtonColor(gyroscopeButton, shaResult.gyroscope);
-                setButtonColor(audioButton, shaResult.audio);
-                setButtonColor(microButton, shaResult.microphone);
-                setButtonColor(proximityButton, shaResult.proximity);
-                setButtonColor(magneticButton, shaResult.magnetic);
-                setButtonColor(accelerometerButton, shaResult.accelerometer);
+                if(shaResult == null){
+                    setButtonColor(batteryButton, null);
+                    setButtonColor(camButton, null);
+                    setButtonColor(screenButton, null);
+                    setButtonColor(vibrateButton, null);
+                    setButtonColor(sensorlightButton, null);
+                    setButtonColor(flashlightButton, null);
+                    setButtonColor(gyroscopeButton, null);
+                    setButtonColor(audioButton, null);
+                    setButtonColor(microButton, null);
+                    setButtonColor(proximityButton, null);
+                    setButtonColor(magneticButton, null);
+                    setButtonColor(accelerometerButton, null);
+                }else {
+                    setButtonColor(batteryButton, shaResult.battery);
+                    setButtonColor(camButton, shaResult.camera);
+                    setButtonColor(screenButton, shaResult.screen);
+                    setButtonColor(vibrateButton, shaResult.vibrate);
+                    setButtonColor(sensorlightButton, shaResult.sensorlight);
+                    setButtonColor(flashlightButton, shaResult.flashlight);
+                    setButtonColor(gyroscopeButton, shaResult.gyroscope);
+                    setButtonColor(audioButton, shaResult.audio);
+                    setButtonColor(microButton, shaResult.microphone);
+                    setButtonColor(proximityButton, shaResult.proximity);
+                    setButtonColor(magneticButton, shaResult.magnetic);
+                    setButtonColor(accelerometerButton, shaResult.accelerometer);
+                }
             }
 
             @Override
@@ -214,9 +229,7 @@ public class MainActivity extends AppCompatActivity {
     void setButtonColor(Button button, Boolean ok){
         if(ok == null){
             return;
-        }
-
-        if(ok){
+        }else if(ok){
             button.setBackgroundTintList(ColorStateList.valueOf(Color.GREEN));
         }else{
             button.setBackgroundTintList(ColorStateList.valueOf(Color.RED));

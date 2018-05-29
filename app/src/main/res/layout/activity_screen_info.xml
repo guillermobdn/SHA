@@ -23,11 +23,11 @@
             android:layout_marginHorizontal="@dimen/marginGeneral"/>
 
         <TextView
-            android:id="@+id/text1"
-            android:layout_marginTop="@dimen/marginGeneral"
+            android:id="@+id/info"
+            android:layout_marginTop="@dimen/marginInfo"
+            android:layout_marginHorizontal="@dimen/marginInfo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/marginGeneral"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

@@ -5,17 +5,17 @@ package com.example.android.sha;
  */
 
 public class SHAResult {
-    boolean battery;
-    boolean camera;
-    boolean screen;
-    boolean vibrate;
-    boolean flashlight;
-    boolean sensorlight;
-    boolean gyroscope;
-    boolean audio;
-    boolean microphone;
-    boolean proximity;
-    boolean magnetic;
-    boolean accelerometer;
-    boolean runAllTest;
+    Boolean battery;
+    Boolean camera;
+    Boolean screen;
+    Boolean vibrate;
+    Boolean flashlight;
+    Boolean sensorlight;
+    Boolean gyroscope;
+    Boolean audio;
+    Boolean microphone;
+    Boolean proximity;
+    Boolean magnetic;
+    Boolean accelerometer;
+    Boolean runAllTest;
 }

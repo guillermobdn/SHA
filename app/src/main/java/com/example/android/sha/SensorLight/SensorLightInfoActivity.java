@@ -33,7 +33,7 @@ public class SensorLightInfoActivity extends AppCompatActivity {
 
         tvInfo.setText(Html.fromHtml("<p><b>Nombre: </b>"+ mLight.getName() +"</p><p><b>Vendedor: </b>" + mLight.getVendor() +
                 "</p><p><b>Versión: </b>"+ mLight.getVersion() + "</p><p><b>Energía: </b>" + mLight.getPower() + "</p><p><b>Rango máximo: </b>" +
-        mLight.getMaximumRange() + "</p><p><b>Resolución: </b>" + mLight.getResolution()));
+        mLight.getMaximumRange() + "</p><p><b>Resolución: </b>" + mLight.getResolution()+"</p>"));
 
 
         test.setOnClickListener(new View.OnClickListener() {

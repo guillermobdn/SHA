@@ -53,6 +53,11 @@ public class BatteryTestActivity extends AppCompatActivity {
         public void onReceive(Context ctxt, Intent intent) {
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
             textBattery.setText(String.valueOf(level) + "%");
+
+            if(intent.getExtras() != null){
+                String tec = intent.getExtras().getString(BatteryManager.EXTRA_TECHNOLOGY);
+                System.out.println("AAA" + tec);
+            }
         }
     };
 
