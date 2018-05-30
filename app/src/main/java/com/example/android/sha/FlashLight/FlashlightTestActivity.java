@@ -22,6 +22,7 @@ public class FlashlightTestActivity extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 50;
     private boolean flashLightStatus = false;
     Button testEnd;
+    boolean alltest;
 
 
 
@@ -53,12 +54,16 @@ public class FlashlightTestActivity extends AppCompatActivity {
             }
         });
 
+        final Intent resultactivity = new Intent(FlashlightTestActivity.this, FlashLightResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
 
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(FlashlightTestActivity.this, FlashLightResultActivity.class));
-                flashLightOff();
+                resultactivity.putExtra("alltest",alltest);
+                startActivity(resultactivity);
+
             }
         });
     }

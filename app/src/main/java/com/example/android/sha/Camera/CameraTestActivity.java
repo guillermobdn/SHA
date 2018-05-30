@@ -20,6 +20,8 @@ public class CameraTestActivity extends AppCompatActivity {
     TextView textView;
     private static final int CAMERA_REQUEST = 50;
     Button testEnd;
+    boolean alltest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +37,17 @@ public class CameraTestActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,0);
+
         final Intent resultactivity = new Intent(CameraTestActivity.this, CameraResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
 
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resultactivity.putExtra("alltest",alltest);
                 startActivity(resultactivity);
-                resultactivity.putExtra("alltest",true);
+
             }
         });
 

@@ -18,6 +18,7 @@ public class BatteryTestActivity extends AppCompatActivity {
     private TextView textBattery,textCharge;
     Button checkBattery, testEnd;
     ImageView battery;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +39,16 @@ public class BatteryTestActivity extends AppCompatActivity {
                 checkBatteryState(textCharge);
             }
         });
+
         final Intent resultactivity = new Intent(BatteryTestActivity.this, BatteryResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
+
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resultactivity.putExtra("alltest",alltest);
                 startActivity(resultactivity);
-                resultactivity.putExtra("alltest",true);
             }
         });
 
@@ -57,7 +62,6 @@ public class BatteryTestActivity extends AppCompatActivity {
 
             if(intent.getExtras() != null){
                 String tec = intent.getExtras().getString(BatteryManager.EXTRA_TECHNOLOGY);
-                System.out.println("AAA" + tec);
             }
         }
     };

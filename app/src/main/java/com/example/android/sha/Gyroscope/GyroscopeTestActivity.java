@@ -22,6 +22,7 @@ public class GyroscopeTestActivity extends AppCompatActivity implements SensorEv
     Button activador, testEnd;
     TextView textGyroscope;
     ImageView fondo;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,11 +91,15 @@ public class GyroscopeTestActivity extends AppCompatActivity implements SensorEv
             }
         });
 
+        final Intent resultactivity = new Intent(GyroscopeTestActivity.this, GyroscopeResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
 
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(GyroscopeTestActivity.this, GyroscopeResultActivity.class));
+                resultactivity.putExtra("alltest", alltest);
+                startActivity(resultactivity);
             }
         });
     }

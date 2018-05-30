@@ -10,6 +10,7 @@ import com.example.android.sha.Camera.CameraInfoActivity;
 import com.example.android.sha.Camera.CameraTestActivity;
 
 public class AllTestActivity extends AppCompatActivity {
+    boolean alltest = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class AllTestActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.putExtra("alltest",alltest);
                 startActivity(intent);
             }
         });

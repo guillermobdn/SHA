@@ -15,7 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CameraResultActivity extends AppCompatActivity {
 
     Button butSi, butNo;
-    Boolean alltest = getIntent().getBooleanExtra("alltest",true);
+    boolean alltest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class CameraResultActivity extends AppCompatActivity {
                 saveResults(false);
             }
         });
+
     }
 
     void saveResults(boolean ok){
@@ -44,13 +46,20 @@ public class CameraResultActivity extends AppCompatActivity {
 
         FirebaseDatabase.getInstance().getReference().child(iid).child("camera").setValue(ok);
 
+        alltest = getIntent().getBooleanExtra("alltest",false);
 
-        if (!alltest) {
+        if (alltest != true) {
             Intent main = new Intent(CameraResultActivity.this, MainActivity.class);
             startActivity(main);
         }else {
             Intent main = new Intent(CameraResultActivity.this, BatteryTestActivity.class);
+            main.putExtra("alltest",alltest);
             startActivity(main);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

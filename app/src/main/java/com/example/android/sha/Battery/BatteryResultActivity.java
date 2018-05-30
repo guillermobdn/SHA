@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class BatteryResultActivity extends AppCompatActivity {
 
     Button butSi, butNo;
-    Boolean alltest = getIntent().getBooleanExtra("alltest",true);
+    Boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +45,20 @@ public class BatteryResultActivity extends AppCompatActivity {
 
         FirebaseDatabase.getInstance().getReference().child(iid).child("battery").setValue(ok);
 
-        if (!alltest){
+        alltest =  getIntent().getBooleanExtra("alltest",false);
+
+        if (alltest != true){
             Intent main = new Intent(BatteryResultActivity.this, MainActivity.class);
             startActivity(main);
         }else {
             Intent main = new Intent(BatteryResultActivity.this, FlashlightTestActivity.class);
+            main.putExtra("alltest",alltest);
             startActivity(main);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

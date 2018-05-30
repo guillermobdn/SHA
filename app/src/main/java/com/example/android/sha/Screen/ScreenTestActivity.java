@@ -18,6 +18,7 @@ public class ScreenTestActivity extends AppCompatActivity {
     TextView text1;
     Button continuar;
     LinearLayout fondo;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +53,15 @@ public class ScreenTestActivity extends AppCompatActivity {
                                 continuar.setText("Finalizar test");
                                 continuar.setVisibility(View.VISIBLE);
 
+                                final Intent resultactivity = new Intent(ScreenTestActivity.this, ScreenResultActivity.class);
+
+                                alltest = getIntent().getBooleanExtra("alltest",false);
+
                                 continuar.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        startActivity(new Intent(ScreenTestActivity.this, ScreenResultActivity.class));
+                                        resultactivity.putExtra("alltest",alltest);
+                                        startActivity(new Intent(resultactivity));
                                     }
                                 });
                             }

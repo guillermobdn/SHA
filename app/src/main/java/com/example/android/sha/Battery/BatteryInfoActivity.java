@@ -50,7 +50,7 @@ public class BatteryInfoActivity extends AppCompatActivity {
             int health = intent.getIntExtra(BatteryManager.EXTRA_HEALTH,0);
 
             tvInfo.setText(Html.fromHtml("<p><b>Tecnología: </b>"+ tec +"</p><p><b>Capacidad: </b>" + cap +
-                    " mAh </p><p><b>Voltage: </b>"+ voltage + " ¡'mV </p><p><b>Salud actual: </b>" + health + "</p>"));
+                    " mAh </p><p><b>Voltage: </b>"+ voltage + " mV </p><p><b>Salud actual: </b>" + health + "</p>"));
 
         }
     };

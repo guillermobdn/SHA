@@ -24,6 +24,7 @@ public class SensorLightTestActivity extends AppCompatActivity implements Sensor
     TextView textView;
     ImageView imageView;
     Button testEnd;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +38,15 @@ public class SensorLightTestActivity extends AppCompatActivity implements Sensor
         mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         testEnd = (Button)findViewById(R.id.testEnd) ;
 
+        final Intent resultactivity = new Intent(SensorLightTestActivity.this, SensorLightResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
+
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SensorLightTestActivity.this, SensorLightResultActivity.class));
+                resultactivity.putExtra("alltest",alltest);
+                startActivity(resultactivity);
             }
         });
     }

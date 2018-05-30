@@ -10,11 +10,14 @@ import com.example.android.sha.Battery.BatteryResultActivity;
 import com.example.android.sha.MainActivity;
 import com.example.android.sha.R;
 import com.example.android.sha.SHAUtils;
+import com.example.android.sha.SensorLight.SensorLightResultActivity;
+import com.example.android.sha.SensorLight.SensorLightTestActivity;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FlashLightResultActivity extends AppCompatActivity {
 
     Button butSi, butNo;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +45,20 @@ public class FlashLightResultActivity extends AppCompatActivity {
         String iid = SHAUtils.getAndroidId(this);
 
         FirebaseDatabase.getInstance().getReference().child(iid).child("flashlight").setValue(ok);
+        alltest =  getIntent().getBooleanExtra("alltest",false);
 
-        Intent main = new Intent(FlashLightResultActivity.this, MainActivity.class);
-        startActivity(main);
+        if (alltest != true) {
+            Intent main = new Intent(FlashLightResultActivity.this, MainActivity.class);
+            startActivity(main);
+        }else {
+            Intent main = new Intent(FlashLightResultActivity.this, SensorLightTestActivity.class);
+            main.putExtra("alltest",alltest);
+            startActivity(main);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

@@ -15,6 +15,7 @@ public class VibratorTestActivity extends AppCompatActivity {
 
     Button checkVibrate, testEnd;
     TextView textVibrate;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,15 @@ public class VibratorTestActivity extends AppCompatActivity {
             textVibrate.setText("Este smarthphone no contiene modo vibratorio.");
         }
 
+        final Intent resultactivity = new Intent(VibratorTestActivity.this, VibratorResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
+
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(VibratorTestActivity.this, VibratorResultActivity.class));
+                resultactivity.putExtra("alltest",alltest);
+                startActivity(new Intent(resultactivity));
             }
         });
     }

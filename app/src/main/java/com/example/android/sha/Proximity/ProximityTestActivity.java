@@ -22,6 +22,7 @@ public class ProximityTestActivity extends AppCompatActivity implements SensorEv
     SensorManager sensorM;
     TextView prox;
     Button testEnd;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +45,15 @@ public class ProximityTestActivity extends AppCompatActivity implements SensorEv
     Al botón activador se le agrega un evento onClick (Significa al hacer click) que permite, que al pulsar sobre él, se ejecute la acción programada. Para esto se crea un Listener(Escucha) de tipo OnClick y se le adiciona al botón.
     En su evento principal se escribe el código que activa el sensor: Se le asigna al Manejador del Sensor (sensorM) el servicio del sistema que controla los sensores, después al sensor que se creó se le agrega específicamente el tipo de sensor que queremos utilizar, en este caso de proximidad y se le cambia el texto al botón para que diga “Activado”. Con esto ya está activado el sensor y procesando los datos que  recibe.
     */
+        final Intent resultactivity = new Intent(ProximityTestActivity.this, ProximityResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
 
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ProximityTestActivity.this, ProximityResultActivity.class));
+                resultactivity.putExtra("alltest",alltest);
+                startActivity(new Intent(resultactivity));
             }
         });
 

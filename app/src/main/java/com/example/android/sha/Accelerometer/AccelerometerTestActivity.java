@@ -23,6 +23,7 @@ public class AccelerometerTestActivity extends AppCompatActivity implements Sens
     Sensor mySensor;
     SensorManager sensorManager;
     ConstraintLayout pantalla;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +50,15 @@ public class AccelerometerTestActivity extends AppCompatActivity implements Sens
                 acceImg.setVisibility(View.INVISIBLE);
                 continuar.setText("Finalizar test");
 
+                final Intent resultactivity = new Intent(AccelerometerTestActivity.this, AccelerometerResultActivity.class);
+
+                alltest = getIntent().getBooleanExtra("alltest",false);
+
                 continuar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        startActivity(new Intent(AccelerometerTestActivity.this, AccelerometerResultActivity.class));
-
+                        resultactivity.putExtra("alltest",alltest);
+                        startActivity(new Intent(resultactivity));
                     }
                 });
 

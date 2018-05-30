@@ -14,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MicrophoneResultActivity extends AppCompatActivity {
 
     Button butSi,butNo;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,22 @@ public class MicrophoneResultActivity extends AppCompatActivity {
     void saveResults(boolean ok){
         String iid = SHAUtils.getAndroidId(this);
 
-        FirebaseDatabase.getInstance().getReference().child(iid).child("microphone").setValue(ok);
+        alltest =  getIntent().getBooleanExtra("alltest",false);
+
+        if (alltest != true) {
+            FirebaseDatabase.getInstance().getReference().child(iid).child("microphone").setValue(ok);
+        }else{
+            FirebaseDatabase.getInstance().getReference().child(iid).child("microphone").setValue(ok);
+            ok = true;
+            FirebaseDatabase.getInstance().getReference().child(iid).child("allTest").setValue(ok);
+        }
 
         Intent main = new Intent(MicrophoneResultActivity.this, MainActivity.class);
         startActivity(main);
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

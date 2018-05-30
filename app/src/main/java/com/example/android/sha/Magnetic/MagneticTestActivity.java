@@ -20,6 +20,7 @@ public class MagneticTestActivity extends AppCompatActivity implements SensorEve
     Sensor sensor;
     SensorManager sensorManager;
     Button testEnd;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +37,15 @@ public class MagneticTestActivity extends AppCompatActivity implements SensorEve
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         sensorManager.registerListener(MagneticTestActivity.this,sensor,SensorManager.SENSOR_DELAY_NORMAL);
 
+        final Intent resultactivity = new Intent(MagneticTestActivity.this, MagneticResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
+
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MagneticTestActivity.this, MagneticResultActivity.class));
+                resultactivity.putExtra("alltest",alltest);
+                startActivity(new Intent(resultactivity));
             }
         });
     }

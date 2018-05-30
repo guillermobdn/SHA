@@ -30,6 +30,7 @@ public class MicrophoneTestActivity extends AppCompatActivity {
     String RandomAudioFileName = "ABCDEFGHIJKLMNOP";
     public static final int RequestPermissionCode = 1;
     MediaPlayer mediaPlayer ;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,10 @@ public class MicrophoneTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_microphone_test);
 
         testEnd = (Button) findViewById(R.id.testEnd);
+
+        final Intent resultactivity = new Intent(MicrophoneTestActivity.this, MicrophoneResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
 
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +51,9 @@ public class MicrophoneTestActivity extends AppCompatActivity {
                 }else {
                     mediaPlayer.pause();
                 }
-                startActivity(new Intent(MicrophoneTestActivity.this, MicrophoneResultActivity.class));
+
+                resultactivity.putExtra("alltest",alltest);
+                startActivity(new Intent(resultactivity));
             }
         });
 
@@ -198,7 +205,6 @@ public class MicrophoneTestActivity extends AppCompatActivity {
 
         }else {
             mediaPlayer.pause();
-
         }
     }
 

@@ -9,11 +9,13 @@ import android.widget.Button;
 import com.example.android.sha.MainActivity;
 import com.example.android.sha.R;
 import com.example.android.sha.SHAUtils;
+import com.example.android.sha.Vibrate.VibratorTestActivity;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ScreenResultActivity extends AppCompatActivity {
 
     Button butSi, butNo;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,20 @@ public class ScreenResultActivity extends AppCompatActivity {
 
         FirebaseDatabase.getInstance().getReference().child(iid).child("screen").setValue(ok);
 
-        Intent main = new Intent(ScreenResultActivity.this, MainActivity.class);
-        startActivity(main);
+        alltest =  getIntent().getBooleanExtra("alltest",false);
+
+        if (alltest != true) {
+            Intent main = new Intent(ScreenResultActivity.this, MainActivity.class);
+            startActivity(main);
+        }else {
+            Intent main = new Intent(ScreenResultActivity.this, VibratorTestActivity.class);
+            main.putExtra("alltest",alltest);
+            startActivity(main);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

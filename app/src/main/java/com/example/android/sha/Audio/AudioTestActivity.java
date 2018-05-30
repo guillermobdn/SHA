@@ -13,6 +13,7 @@ public class AudioTestActivity extends AppCompatActivity {
 
     Button play_pause,testEnd;
     MediaPlayer mp;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +41,17 @@ public class AudioTestActivity extends AppCompatActivity {
             }
         });
 
+        final Intent resultactivity = new Intent(AudioTestActivity.this, AudioResultActivity.class);
+
+        alltest = getIntent().getBooleanExtra("alltest",false);
 
         testEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mp.pause();
                 play_pause.setBackgroundResource(R.drawable.play);
-                startActivity(new Intent(AudioTestActivity.this, AudioResultActivity.class));
+                resultactivity.putExtra("alltest",alltest);
+                startActivity(new Intent(resultactivity));
             }
         });
     }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.android.sha.Gyroscope.GyroscopeTestActivity;
 import com.example.android.sha.MainActivity;
 import com.example.android.sha.R;
 import com.example.android.sha.SHAUtils;
@@ -13,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SensorLightResultActivity extends AppCompatActivity {
     Button butSi, butNo;
+    boolean alltest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,20 @@ public class SensorLightResultActivity extends AppCompatActivity {
         String iid = SHAUtils.getAndroidId(this);
 
         FirebaseDatabase.getInstance().getReference().child(iid).child("sensorlight").setValue(ok);
+        alltest =  getIntent().getBooleanExtra("alltest",false);
 
-        Intent main = new Intent(SensorLightResultActivity.this, MainActivity.class);
-        startActivity(main);
+        if (alltest != true) {
+            Intent main = new Intent(SensorLightResultActivity.this, MainActivity.class);
+            startActivity(main);
+        }else{
+            Intent main = new Intent(SensorLightResultActivity.this, GyroscopeTestActivity.class);
+            main.putExtra("alltest",alltest);
+            startActivity(main);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }
