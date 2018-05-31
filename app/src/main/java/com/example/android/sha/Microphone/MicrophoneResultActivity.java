@@ -49,7 +49,7 @@ public class MicrophoneResultActivity extends AppCompatActivity {
         }else{
             FirebaseDatabase.getInstance().getReference().child(iid).child("microphone").setValue(ok);
             ok = true;
-            FirebaseDatabase.getInstance().getReference().child(iid).child("allTest").setValue(ok);
+            FirebaseDatabase.getInstance().getReference().child(iid).child("runAllTest").setValue(ok);
         }
 
         Intent main = new Intent(MicrophoneResultActivity.this, MainActivity.class);

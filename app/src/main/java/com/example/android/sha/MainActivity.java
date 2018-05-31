@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
                     setButtonColor(proximityButton, shaResult.proximity);
                     setButtonColor(magneticButton, shaResult.magnetic);
                     setButtonColor(accelerometerButton, shaResult.accelerometer);
-                    setButtonColor(alltestButton, shaResult.runAllTest);
+                    alltestButton.setBackgroundTintList(ColorStateList.valueOf(Color.YELLOW));
                 }
             }
 
