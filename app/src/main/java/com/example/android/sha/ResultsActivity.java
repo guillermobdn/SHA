@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+//import com.firebase.ui.database.FirebaseRecyclerAdapter;
+//import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,17 +31,17 @@ public class ResultsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
+/*
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Result>()
                 .setQuery(mReference, Result.class)
                 .setLifecycleOwner(this)
                 .build();
 
-        recyclerView.setAdapter(new ResultsAdapter(this, options));
+        recyclerView.setAdapter(new ResultsAdapter(this, options));*/
     }
 }
 
-
+/*
 class ResultsAdapter extends FirebaseRecyclerAdapter<Result, ResultViewHolder>{
     Context context;
 
@@ -85,4 +85,4 @@ class Result {
     public Result(String name) {
         this.name = name;
     }
-}
+}*/

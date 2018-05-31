@@ -13,16 +13,20 @@ import android.widget.Button;
 
 import com.example.android.sha.Accelerometer.AccelerometerInfoActivity;
 import com.example.android.sha.Audio.AudioInfoActivity;
+import com.example.android.sha.Audio.AudioTestActivity;
 import com.example.android.sha.Battery.BatteryInfoActivity;
 import com.example.android.sha.Camera.CameraInfoActivity;
 import com.example.android.sha.FlashLight.FlashlightInfoActivity;
+import com.example.android.sha.FlashLight.FlashlightTestActivity;
 import com.example.android.sha.Gyroscope.GyroscopeInfoActivity;
 import com.example.android.sha.Magnetic.MagneticInfoActivity;
 import com.example.android.sha.Microphone.MicrophoneInfoActivity;
+import com.example.android.sha.Microphone.MicrophoneTestActivity;
 import com.example.android.sha.Proximity.ProximityInfoActivity;
 import com.example.android.sha.Screen.ScreenInfoActivity;
 import com.example.android.sha.SensorLight.SensorLightInfoActivity;
 import com.example.android.sha.Vibrate.VibratorInfoActivity;
+import com.example.android.sha.Vibrate.VibratorTestActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         vibrateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, VibratorInfoActivity.class));
+                startActivity(new Intent(MainActivity.this, VibratorTestActivity.class));
             }
         });
 
@@ -92,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         flashlightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, FlashlightInfoActivity.class));
+                startActivity(new Intent(MainActivity.this, FlashlightTestActivity.class));
             }
         });
 
@@ -110,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         audioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AudioInfoActivity.class));
+                startActivity(new Intent(MainActivity.this, AudioTestActivity.class));
             }
         });
 
@@ -119,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         microButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MicrophoneInfoActivity.class));
+                startActivity(new Intent(MainActivity.this, MicrophoneTestActivity.class));
             }
         });
 
